@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">Zapisy na kurs</span>
+</nav> <br>
+<div class="container">
+<h5>Zapisz się na kurs:</h5>
+    <form method="post" th:action="@{/registration-result}" th:object="${user}">
+    <table class="table">
+        <tbody>
+        <tr>
+            <td th:text="Imie"/>
+            <td >
+                <input type="text" class="form-control" th:field="*{name}"/>
+            </td>
+        </tr>
+        <tr>
+            <td th:text="Nazwisko"/>
+            <td >
+                <input type="text" class="form-control" th:field="*{surname}"/>
+            </td>
+        </tr>
+        <tr>
+            <td th:text="Email"/>
+            <td >
+                <input type="text" class="form-control" th:field="*{email}"/>
+            </td>
+        </tr>
+        <tr>
+            <td th:text="Telefon"/>
+            <td >
+                <input type="text" class="form-control" th:field="*{phone}"/>
+            </td>
+        </tr>
+        <tr>
+            <td th:text="Kurs"/>
+            <td >
+                <select th:field="*{course}">
+                    <option value="java" >JAVA</option>
+                    <option value="python" >PYTHON</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td th:text="Tryb"/>
+            <td >
+                <select th:field="*{type}">
+                    <option value="day" >Dzienny</option>
+                    <option value="weekends" >Weekendowy</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a th:href="@{/}" class="btn btn-outline-infom">Home</a>
+            </td>
+            <td class="text-right">
+                <input type="submit" name="submit" class="btn btn-outline-info" th:value="Submit"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </form>
+</div>
+</body>
+</html>

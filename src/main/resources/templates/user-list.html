@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">Zapisy na kurs</span>
+</nav> <br>
+<div class="container">
+    <form th:action="@{/admin/user-list}" method="post" >
+        <table class="table">
+            <tr>
+                <td>
+                    <input type="text" class="form-control" name="searchText">
+                </td>
+                <td>
+                    <select class="form-control" name="searchParameter">
+                        <option value="name">Imię</option>
+                        <option value="surname">Nazwisko</option>
+                        <option value="email">Email</option>
+                        <option value="phone">Telefon</option>
+                        <option value="course">Kurs</option>
+                        <option value="type">Tryb</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="submit" class="btn btn-outline-info" value="Szukaj"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <table class="table">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Imię</th>
+            <th scope="col">Nazwisko</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefon</th>
+            <th scope="col">Kurs</th>
+            <th scope="col">Tryb</th>
+        </tr>
+        <tr th:each="user: ${users}">
+            <td><span th:text="${user.id}" /></td>
+            <td><span th:text="${user.name}" /></td>
+            <td><span th:text="${user.surname}" /></td>
+            <td><span th:text="${user.email}" /></td>
+            <td><span th:text="${user.phone}" /></td>
+            <td><span th:text="${user.course}" /></td>
+            <td><span th:text="${user.type}" /></td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>
