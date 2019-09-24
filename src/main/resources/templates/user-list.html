@@ -50,11 +50,12 @@
             <td><span th:text="${user.surname}" /></td>
             <td><span th:text="${user.email}" /></td>
             <td><span th:text="${user.phone}" /></td>
-            <td><span th:text="${user.course}" /></td>
+            <td><span th:text="${user.course.title}" /></td>
             <td><span th:text="${user.type}" /></td>
         </tr>
     </table>
-
+<a href="/" class="btn btn-outline-info">Home</a>
+<a href="/register" class="btn btn-outline-info">Zapisy</a>
 </div>
 </body>
 </html>

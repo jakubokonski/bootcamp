@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">Bootcamp Management</span>
+</nav> <br>
+<div class="container">
+    <h5>Dodaj kurs:</h5>
+    <form method="post" th:action="@{/add-course}" th:object="${course}">
+        <table class="table">
+            <tbody>
+            <tr>
+                <td th:text="Nazwa"/>
+                <td>
+                    <input type="text" class="form-control" th:field="*{title}"/>
+                </td>
+            </tr>
+            <tr>
+                <td th:text="Opis"/>
+                <td>
+                    <input type="text" class="form-control" th:field="*{description}"/>
+                </td>
+            </tr>
+            <tr>
+                <td th:text="Tryb"/>
+                <td>
+                    <select class="form-control" id="selectMode" th:field="*{courseMode}">
+                        <option th:each="courseMode : ${T(pl.jakub.bootcamp.model.enums.CourseMode).values()}" th:value="${courseMode}" th:text="${courseMode.displayName}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a th:href="@{/}" class="btn btn-outline-info">Home</a>
+                </td>
+                <td class="text-right">
+                    <input type="submit" name="submit" class="btn btn-outline-info" th:value="Submit"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+</body>
+</html>

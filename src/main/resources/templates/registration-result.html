@@ -13,23 +13,24 @@
 <div class="container">
     <table class="table">
         <tr>
-            <td>
-                Imie:
-            </td>
-            <td>
-                <span th:text="${user.name}" />
-            </td>
+            <th scope="col">Imię</th>
+            <th scope="col">Nazwisko</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefon</th>
+            <th scope="col">Kurs</th>
+            <th scope="col">Tryb</th>
         </tr>
         <tr>
-            <td>
-                Kurs:
-            </td>
-            <td>
-                <span th:text="${user.course}" />
-            </td>
+            <td><span th:text="${user.name}" /></td>
+            <td><span th:text="${user.surname}" /></td>
+            <td><span th:text="${user.email}" /></td>
+            <td><span th:text="${user.phone}" /></td>
+            <td><span th:text="${user.course}" /></td>
+            <td><span th:text="${user.type}" /></td>
         </tr>
     </table>
-    <a th:href="@{/register}" class="btn btn-outline-infom">Register</a>
+    <a href="/register" class="btn btn-outline-info">Register</a>
+    <a href="/admin/user-list" class="btn btn-outline-info">Lista</a>
 </div>
 </body>
 </html>

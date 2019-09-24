@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>User registration</title>
@@ -8,12 +8,15 @@
 
 <body>
 <nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1">Kursy</span>
+    <span class="navbar-brand mb-0 h1">Zarządzanie kursami</span>
 </nav> <br>
 <div class="container">
-    <div><a href="/register" class="btn btn-outline-infom">Register</a></div>
-    <div><a href="/admin/user-list" class="btn btn-outline-infom">List kursantów</a></div>
-
+    <div class="row">
+    <div class="col-sm"><a href="/register" class="btn btn-outline-info">Zapisz się na kurs</a></div>
+    <div class="col-sm"><a href="/add-course" class="btn btn-outline-info">Dodaj kurs</a></div>
+    <div class="col-sm"><a href="/admin/user-list" class="btn btn-outline-info">Lista kursantów</a></div>
+    <div class="col-sm"><a href="/admin/courses-list" class="btn btn-outline-info">Lista kursów</a></div>
+    </div>
 </div>
 </body>
 </html>

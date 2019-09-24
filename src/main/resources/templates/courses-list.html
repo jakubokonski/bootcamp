@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">Lista kursów</span>
+</nav> <br>
+<div class="container">
+<!--Courses list start-->
+    <table class="table">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nazwa</th>
+            <th scope="col">Opis</th>
+            <th scope="col">Tryb</th>
+        </tr>
+        <tr th:each="course: ${courses}">
+            <td><span th:text="${course.id}" /></td>
+            <td><span th:text="${course.title}" /></td>
+            <td><span th:text="${course.description}" /></td>
+            <td><span th:text="${course.courseMode}" /></td>
+        </tr>
+    </table>
+    <a href="/" class="btn btn-outline-info">Home</a>
+    <a href="/add-course" class="btn btn-outline-info">Dodaj kurs</a>
+</div>
+</body>
+</html>

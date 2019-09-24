@@ -12,54 +12,50 @@
 </nav> <br>
 <div class="container">
 <h5>Zapisz się na kurs:</h5>
+
+
     <form method="post" th:action="@{/registration-result}" th:object="${user}">
     <table class="table">
         <tbody>
         <tr>
             <td th:text="Imie"/>
-            <td >
+            <td>
                 <input type="text" class="form-control" th:field="*{name}"/>
+                <p th:errors="*{name}">Pole nie może być puste</p>
             </td>
         </tr>
         <tr>
             <td th:text="Nazwisko"/>
-            <td >
+            <td>
                 <input type="text" class="form-control" th:field="*{surname}"/>
+                <p th:errors="*{surname}">Pole nie może być puste</p>
             </td>
         </tr>
         <tr>
             <td th:text="Email"/>
-            <td >
+            <td>
                 <input type="text" class="form-control" th:field="*{email}"/>
+                <p th:errors="*{email}"></p>
             </td>
         </tr>
         <tr>
             <td th:text="Telefon"/>
-            <td >
+            <td>
                 <input type="text" class="form-control" th:field="*{phone}"/>
+                <p th:errors="*{phone}">Pole nie może być puste</p>
             </td>
         </tr>
         <tr>
-            <td th:text="Kurs"/>
-            <td >
-                <select th:field="*{course}">
-                    <option value="java" >JAVA</option>
-                    <option value="python" >PYTHON</option>
-                </select>
-            </td>
+            <td th:text="Username"/>
+            <td><input type="text" class="form-control" th:field="*{userName}"/></td>
         </tr>
         <tr>
-            <td th:text="Tryb"/>
-            <td >
-                <select th:field="*{type}">
-                    <option value="day" >Dzienny</option>
-                    <option value="weekends" >Weekendowy</option>
-                </select>
-            </td>
+            <td th:text="Haslo"/>
+            <td><input type="password" class="form-control" th:field="*{password}"/></td>
         </tr>
         <tr>
             <td>
-                <a th:href="@{/}" class="btn btn-outline-infom">Home</a>
+                <a th:href="@{/}" class="btn btn-outline-info">Home</a>
             </td>
             <td class="text-right">
                 <input type="submit" name="submit" class="btn btn-outline-info" th:value="Submit"/>
