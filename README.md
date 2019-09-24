@@ -1,4 +1,4 @@
-# bootcamp
+# Bootcamp Management (Exercise)
 Simple Spring/Hibernate (MySQL) webapp to manage IT courses.
 
 Features:
